@@ -1,4 +1,4 @@
-module dummy-golang.com/v2
+module github.com/triet-truong/go-dynamic-worker-pool
 
 go 1.18
 
