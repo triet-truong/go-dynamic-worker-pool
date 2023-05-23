@@ -58,7 +58,7 @@ func consumeTasks(wg *sync.WaitGroup, currentWorkerSize int, tasks chan string, 
 }
 
 func produceTasks(tasks chan string) {
-	for i := 0; i <= 100; i++ {
+	for i := 0; i <= 10; i++ {
 		tasks <- fmt.Sprintf("task_%v", i)
 		time.Sleep(1000 * time.Millisecond)
 	}
