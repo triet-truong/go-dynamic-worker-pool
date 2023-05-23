@@ -22,3 +22,38 @@ Update the number in this file and watch the program log:
 <img width="914" alt="image" src="https://user-images.githubusercontent.com/19305944/211184964-3d95b980-8837-4022-abaa-31d532a2dcbd.png">
 
 Try it yourself!
+
+## Integration test coverage
+
+Run program with coverage files generation:
+
+```shell
+mkdir covdatafiles
+GOCOVERDIR=covdatafiles go run -cover *.go
+```
+
+Merge duplicated coverage files (if necessary):
+
+```shell
+mkdir merged
+go tool covdata merge -i=covdatafiles -o=merged
+```
+
+Show coverage overall percentage:
+
+```shell
+go tool covdata percent -i=covdatafiles
+```
+
+Convert to human-readable coverage file:
+
+```shell
+go tool covdata textfmt -i=covdatafiles -o=cov.txt
+```
+
+Show as console output or HTML :
+
+```shell
+go tool cover -func=cov.txt
+go tool cover -html=cov.txt
+```
